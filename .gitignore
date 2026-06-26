@@ -7,7 +7,7 @@ venv/
 .venv/
 
 # Model weights (large files)
-outputs/best_model/
+outputs/best_model/model.safetensors
 
 # Data (raw downloads)
 data/raw/
