@@ -1,0 +1,12 @@
+FinBERT Central Bank Sentiment Classifier
+Fine-tuned on FOMC minutes + RBA statements
+
+              precision    recall  f1-score   support
+
+      dovish      1.000     0.571     0.727        14
+     hawkish      0.650     1.000     0.788        13
+     neutral      0.917     0.846     0.880        13
+
+    accuracy                          0.800        40
+   macro avg      0.856     0.806     0.798        40
+weighted avg      0.859     0.800     0.797        40

@@ -1,0 +1,77 @@
+{
+  "model": "ProsusAI/finbert",
+  "dataset_size": 200,
+  "train_size": 160,
+  "test_size": 40,
+  "best_val_acc": 0.8,
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.2158,
+      "train_acc": 0.494,
+      "val_loss": 0.9162,
+      "val_acc": 0.6
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.7163,
+      "train_acc": 0.706,
+      "val_loss": 0.7238,
+      "val_acc": 0.675
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.306,
+      "train_acc": 0.906,
+      "val_loss": 0.7565,
+      "val_acc": 0.8
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.1426,
+      "train_acc": 0.975,
+      "val_loss": 0.7007,
+      "val_acc": 0.725
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.0696,
+      "train_acc": 0.988,
+      "val_loss": 0.8079,
+      "val_acc": 0.725
+    }
+  ],
+  "classification_report": {
+    "dovish": {
+      "precision": 1.0,
+      "recall": 0.5714285714285714,
+      "f1-score": 0.7272727272727273,
+      "support": 14.0
+    },
+    "hawkish": {
+      "precision": 0.65,
+      "recall": 1.0,
+      "f1-score": 0.7878787878787878,
+      "support": 13.0
+    },
+    "neutral": {
+      "precision": 0.9166666666666666,
+      "recall": 0.8461538461538461,
+      "f1-score": 0.88,
+      "support": 13.0
+    },
+    "accuracy": 0.8,
+    "macro avg": {
+      "precision": 0.8555555555555555,
+      "recall": 0.8058608058608058,
+      "f1-score": 0.7983838383838383,
+      "support": 40.0
+    },
+    "weighted avg": {
+      "precision": 0.8591666666666666,
+      "recall": 0.8,
+      "f1-score": 0.7966060606060605,
+      "support": 40.0
+    }
+  }
+}
