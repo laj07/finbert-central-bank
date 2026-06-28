@@ -8,12 +8,12 @@ Fine-tuning [ProsusAI/finbert](https://huggingface.co/ProsusAI/finbert) on Feder
 
 Central bank communication is one of the most systematically traded signals in fixed income markets. When the Fed chair says "the labor market remains extremely tight," bond traders move. When the RBA says "the Board is prepared to ease further," rates desks reprice the curve.
 
-The standard open-source approach uses keyword counting (Loughran-McDonald word lists) — fast, but brittle. A sentence like *"the Committee sees upside risks as no longer elevated"* is hawkish by context but scores neutral on keyword count. Fine-tuned language models resolve this by capturing the full semantic context of a sentence rather than summing individual words.
+The standard open-source approach uses keyword counting (Loughran-McDonald word lists) such as fast, but brittle. A sentence like *"the Committee sees upside risks as no longer elevated"* is hawkish by context but scores neutral on keyword count. Fine-tuned language models resolve this by capturing the full semantic context of a sentence rather than summing individual words.
 
 **This classifier is applicable to:**
 - Automated scanning of FOMC minutes for tone shifts (released 8× per year)
 - Building a quantitative hawkishness index for rates trading signals
-- Fixed income research — quantifying policy stance over time
+- Fixed income research (quantifying policy stance over time)
 - Monitoring cross-central-bank divergence (Fed vs. RBA tightening/easing cycles)
 
 ---
@@ -24,8 +24,8 @@ Given a sentence extracted from a central bank document, output one of:
 
 | Label | Meaning | Example |
 |---|---|---|
-| **Hawkish** | Tightening bias — rate hikes, inflation concern | *"The Committee anticipates that ongoing increases in the target range will be appropriate."* |
-| **Dovish** | Easing bias — rate cuts, growth/unemployment concern | *"The Board decided that lower interest rates were appropriate to support employment."* |
+| **Hawkish** | Tightening bias - rate hikes, inflation concern | *"The Committee anticipates that ongoing increases in the target range will be appropriate."* |
+| **Dovish** | Easing bias - rate cuts, growth/unemployment concern | *"The Board decided that lower interest rates were appropriate to support employment."* |
 | **Neutral** | Balanced, data-dependent, or descriptive | *"The Committee will assess incoming data and adjust policy as appropriate."* |
 
 ---
@@ -33,8 +33,8 @@ Given a sentence extracted from a central bank document, output one of:
 ## Dataset
 
 ### Sources
-- **FOMC meeting minutes** (Federal Reserve, federalreserve.gov) — 8 meetings per year, ~5,000 words per document, released ~3 weeks after each meeting
-- **RBA Board statements** (Reserve Bank of Australia, rba.gov.au) — released after each Board meeting
+- **FOMC meeting minutes** (Federal Reserve, federalreserve.gov): 8 meetings per year, ~5,000 words per document, released ~3 weeks after each meeting
+- **RBA Board statements** (Reserve Bank of Australia, rba.gov.au): released after each Board meeting
 
 Both are public domain documents.
 
@@ -56,7 +56,7 @@ Train/test split: **80/20 stratified** (160 train, 40 test).
 
 ## Model
 
-- **Backbone**: `ProsusAI/finbert` — BERT-base pre-trained on ~5M financial news articles
+- **Backbone**: `ProsusAI/finbert` - BERT-base pre-trained on ~5M financial news articles
 - **Head**: linear layer → 3 logits (hawkish / dovish / neutral)
 - **Fine-tuning**: AdamW, lr=2e-5, weight_decay=0.01, 5 epochs, gradient clipping at 1.0
 - **Tokenizer**: WordPiece, max_length=128
@@ -133,7 +133,7 @@ for sentence in examples:
 
 ---
 
-## Finance context — rates markets application
+## Finance context (rates markets application)
 
 The hawkishness score from a model like this can be used to construct a **policy stance index**:
 
